@@ -1,4 +1,0 @@
-index=* sourcetype="XmlWinEventLog:Microsoft-Windows-Sysmon/Operational" EventCode=3
-| stats dc(DestinationIp) as dest_count, values(DestinationIp) as destinations by SourceIp
-| where dest_count > 30
-| sort - dest_count
